@@ -13,7 +13,7 @@ from utils import creer_client, MODELE
 client = creer_client()
 
 # Définition du prompt : c'est la question ou instruction envoyée au modèle
-prompt = "Qui a écrit le roman Les Fleurs du Mal ?"
+prompt = "Qui a été élu président de la france en 2025 ?"
 
 # Affichage du prompt pour que l'étudiant sache ce qui est envoyé
 print("=== Prompt envoyé ===")

@@ -6,7 +6,7 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 
 from utils import creer_client, MODELE, FOURNISSEUR
-
+from groq import AuthenticationError, RateLimitError
 client = creer_client()
 
 # Le prompt à envoyer
@@ -17,15 +17,21 @@ print(f"Prompt : {prompt}")
 print()
 
 # Envoi de la requête à l'API
-reponse = client.chat.completions.create(
-    model=MODELE,
-    messages=[
-        {"role": "system", "content": "Tu es un développeur Python expérimenté."},
-        {"role": "user", "content": prompt}
-    ],
-    temperature=0.3,
-    max_tokens=300
-)
+try:
+    reponse = client.chat.completions.create(
+        model=MODELE,
+        messages=[
+            {"role": "system", "content": "Tu es un développeur Python expérimenté."},
+            {"role": "user", "content": prompt}
+        ],
+        temperature=0.3,
+        max_tokens=300
+    )
+except AuthenticationError as e:
+    print("Clé API invalide", AuthenticationError) 
+except RateLimitError as e:
+    print("Trop de requête faite, réessayer plus tard", RateLimitError) 
+    
 
 # Affichage de la réponse
 print("=== Réponse du modèle ===")

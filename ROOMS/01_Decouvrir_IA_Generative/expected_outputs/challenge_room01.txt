@@ -1,0 +1,19 @@
+Challenge - Premier prompt
+  Prompt utilisé     : Je dois laver ma voiture, j'habite à 150 mètres d'une station de lavage. Devrais-je y aller à pied ou en voiture ?
+  Réponse obtenue    : Il est généralement recommandé de préférer l'option la moins polluante et la plus respectueuse de l'environnement. Dans ce cas, étant donné que la station de lavage est à proximité, il serait préférable de marcher jusqu'à la station de lavage. 
+
+Voici quelques raisons pour lesquelles marcher est une bonne option :
+- Réduction des émissions de gaz à effet de serre : en marchant, vous n'émettez pas de gaz à effet de serre, ce qui contribue à réduire les impacts environnementaux.
+- Amélioration de la santé : la marche est une activité physique bénéfique pour la santé, qui peut aider à améliorer la circulation sanguine, la respiration et la flexibilité.
+- Économie de ressources : en marchant, vous n'avez pas besoin de consommer de l
+
+  Jugement           : [X] correcte
+
+
+    Prompt utilisé     : Qui a été élu président de la france en 2025 ?
+    Réponse obtenue    : Je n'ai pas de informations à jour sur les élections présidentielles françaises de 2025. Les informations que j'ai sont jusqu'en décembre 2023 et je ne peux pas prédire l'avenir. Les élections présidentielles françaises sont prévues pour 2027, mais je ne peux pas fournir d'informations sur les résultats de l'élection de 2025 car elle n'est pas encore arrivée.
+
+
+1 Le modèle n'a pas su calculer avec une logique le premier prompt
+2 La modèle n'a pas inventé de valeur ni essayer de deviner une valeur
+

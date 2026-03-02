@@ -22,7 +22,7 @@ except Exception:
 
 # Le prompt dont on veut connaitre la taille en tokens
 prompt = (
-    "Tu es un professeur universitaire specialise en intelligence artificielle. "
+    "Tu es un professeur universitaire specialise en intelligence artificielle. Sois très clair dans tes explications pour des petits"
     "Explique a un etudiant debutant ce qu'est le machine learning "
     "en utilisant uniquement des exemples du quotidien. "
     "Limite ta reponse a 100 mots."
@@ -44,7 +44,7 @@ if encodeur:
     print()
 
     print("=== Detail des tokens (10 premiers) ===")
-    for i, token_id in enumerate(tokens[:10]):
+    for i, token_id in enumerate(tokens[:(10)]):
         texte_token = encodeur.decode([token_id])
         print(f"  Token {i+1:2d} : id={token_id:6d}  texte='{texte_token}'")
     print(f"  ... ({len(tokens) - 10} tokens restants)")

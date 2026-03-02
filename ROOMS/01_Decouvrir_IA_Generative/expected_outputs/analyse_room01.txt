@@ -1,0 +1,7 @@
+Pourquoi le modèle peut-il affirmer quelque chose de faux sans le savoir ?
+-- Le modèle se base sur ses données, si la données est fausse, l'humain peut le savoir mais pas
+le modèle, car il "ne sait pas qu'il ne sait pas"
+Dans quel contexte professionnel l'hallucination serait-elle dangereuse ?
+-- Dans beaucoup de secteur professionnel, que ce soit la construction, la médecine, la sécurité, l'informatique en général
+Quelle précaution simple pourriez-vous prendre pour réduire ce risque ?
+-- Vérifier chaque réponse d'un modèle avec ses propres connaissances/recherches web pour "valider" ses sources

@@ -1,0 +1,15 @@
+En tant qu'expert de la culture général, tu vas générer un quizz de 5 questions pour un utilisateur par rapport au sujet demandé : sujet.
+Il faut trier aléatoirement les réponses
+Réponds UNIQUEMENT avec un objet JSON valide, sans texte avant ni après.
+Utilise exactement cette structure : 
+{
+  "sujet": "...",
+  "questions": [
+    {
+      "numero": 1,
+      "question": "...",
+      "options": ["A. ...", "B. ...", "C. ...", "D. ..."],
+      "bonne_reponse": "A"
+    }
+  ]
+}

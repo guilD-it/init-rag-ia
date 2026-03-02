@@ -3,27 +3,51 @@
 A compléter au fil des étapes de practice.md
 
 Etape 1 - Premier prompt
-  Prompt utilisé     : [votre prompt ici]
-  Réponse obtenue    : [résumez en 1-2 phrases]
-  Jugement           : [ ] correcte  [ ] incorrecte  [ ] impossible à vérifier
+  Prompt utilisé     : [Qui a écrit le roman Les Fleurs du Mal ?]
+  Réponse obtenue    : Le roman "Les Fleurs du Mal" a été écrit par Charles Baudelaire. Il s'agit d'un recueil de poèmes publié en 1857, qui est considéré comme l'un des plus importants et des plus influents de la littérature française du XIXe siècle.]
+  Jugement           : [X] correcte  [ ] incorrecte  [ ] impossible à vérifier
 
 Etape 2 - Hallucination
-  Prompt utilisé     : [votre prompt ici]
-  Réponse obtenue    : [résumez en 1-2 phrases]
+  Prompt utilisé     : [Qui est l'auteur du roman 'Le Voyage des Ombres Silencieuses' publié en 1934 ?]
+  Réponse obtenue    : [Je n'ai pas trouvé d'information sur un roman intitulé 'Le Voyage des Ombres Silencieuses' publié en 1934. Il est possible que ce soit un livre peu connu ou un titre qui n'existe pas. Si vous avez plus d'informations sur ce roman, je serais ravi de vous aider à trouver l'auteur.]
   Jugement           : [ ] correcte  [ ] incorrecte  [ ] impossible à vérifier
   Ce qui est faux    : [expliquez l'erreur]
 
 Etape 3 - Comparaison de formulations
   Prompt A           : Quelle est la capitale de l'Australie ?
-  Réponse A          : [votre réponse ici]
+  Réponse A          : [La capitale de l'Australie est Canberra.]
   Prompt B           : Quelle est la capitale de l'Australie ? Réponds en une seule phrase.
-  Réponse B          : [votre réponse ici]
-  Différence observée: [oui/non - expliquez si oui]
+  Réponse B          : [La capitale de l'Australie est Canberra.]
+  Différence observée: [non]
 
 Etape 4 - Effet de la température
-  Prompt utilisé     : [le prompt du script 02]
-  Réponse température 0   (exécution 1) : [résumez]
-  Réponse température 0   (exécution 2) : [résumez]
-  Réponse température 0.9 (exécution 1) : [résumez]
-  Réponse température 0.9 (exécution 2) : [résumez]
-  Variabilité observée : [ ] aucune  [ ] légère  [ ] forte
+  Prompt utilisé     : [Décris en quelques phrases comment fonctionne la photosynthèse.]
+  Réponse température 0   
+  La photosynthèse est le processus par lequel les plantes, les algues et certains types de bactéries convertissent l'énergie solaire en énergie chimique sous forme de glucides. Ce processus se déroule en plusieurs étapes :
+
+1. L'énergie solaire est capturée par les chloroplastes, des organites présents dans les cellules végétales.
+2. L'eau (H2O) et le dioxyde de carbone (CO2) sont absorbés par les racines et les feuilles des plantes.
+3. L'énergie solaire est utilisée pour convertir l'eau et le dioxyde de carbone en glucose (C6H12O6) et en oxygène (O2) grâce à la réaction chimique suivante : 6 CO2 + 6 H2O + énergie solaire → C6H12O6 + 6 O2.
+4. Le glucose est stocké dans les cellules végétales sous forme de sucres et peut être utilisé pour alimenter les processus vitaux de la plante.
+5. L'oxygène est libéré dans l'atmosphère comme sous-produit de la photosynthèse.
+
+La photosynthèse est essentielle pour la vie sur Terre, car elle fournit l'énergie et les nutrim : 
+  Réponse température 0   (exécution 2) :La photosynthèse est le processus par lequel les plantes, les algues et certains types de bactéries convertissent l'énergie solaire en énergie chimique sous forme de glucides. Ce processus se déroule en plusieurs étapes :
+  
+  
+  Réponse température 0.9 (exécution 1) : 
+  La photosynthèse est le processus par lequel les plantes, les algues et certains microbes convertissent l'énergie solaire en énergie chimique sous forme d'acides gras ou de glucose. Cela se produit principalement dans les glandes chlorophylliennes des plantes, qui contiennent du chlorophylle responsable de la capture de l'énergie solaire.
+
+L'énergie solaire est absorbée par le chlorophylle, qui la transmet à un composé appelé ATP (adénosine triphosphate). De l'eau et du dioxyde de carbone sont ensuite utilisés pour former la glucose, qui sert de source d'énergie et de carbone pour la croissance et le développement des plantes. L'oxygène est libéré comme sous-produit de la photosynthèse, ce qui rend possible l'existence des êtres vivants à l'air libre.
+
+
+  Réponse température 0.9 (exécution 2) : La photosynthèse est le processus par lequel les plantes, les algues et les cyanobactéries convertissent l'énergie du soleil en énergie chimique stockée sous forme de glucides. Cela se produit principalement dans les chloroplastes, organelles spécialisées présentes dans les cellules végétales.
+
+La photosynthèse commence lorsque les plantes absorbent l'énergie lumineuse du soleil, principalement sous forme de photons de lumière visible et infrarouge. Ces photons sont capturés par des molécules appelées chlorophylles, qui les transforment en énergie chimique.
+
+L'énergie chimique est ensuite utilisée pour convertir le dioxyde de carbone (CO2) et l'eau (H2O) en glucose (C6H12O6) et en dioxygène (O2). Ce processus se déroule en plusieurs étapes, notamment la fixation du carbone, le transport des électrons et la formation de l'ATP (adénosine triphosphate), qui est l'énergie chimique stockée par les cellules.
+
+La photosynthèse est essentielle pour la vie sur Terre, car elle fournit l'énergie et les nutriments nécessaires pour soutenir la chaîne alimentaire et permet aux plantes de grands arbres
+  Variabilité observée : [ ] aucune  [ ] légère  [X] forte
+
+

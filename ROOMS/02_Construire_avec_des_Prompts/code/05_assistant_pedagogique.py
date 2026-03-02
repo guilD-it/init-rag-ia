@@ -22,9 +22,10 @@ def expliquer_sujet(sujet):
     #   - Le sujet à expliquer
     #   - Une contrainte de format (3 paragraphes : définition, analogie, exemple)
     #   - Une contrainte de longueur (maximum 150 mots)
+    
     prompt_explication = (
         # A COMPLETER
-        f"Explique le sujet suivant : {sujet}"  # Version basique à améliorer
+        f"Explique le sujet suivant : {sujet} .En tant que professeur bienveillant pour étudiants sans base IA, la réponse doit avoir 3 paragraphaque qui suit une structure définition, analogie et exemple et 150 mots maximums"  # Version basique à améliorer
     )
 
     reponse = client.chat.completions.create(

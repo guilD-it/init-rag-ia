@@ -2,30 +2,113 @@
 ==================================
 
 --- Réponse au prompt VAGUE ---
-[Collez ici la réponse obtenue avec le prompt vague]
+Les réseaux de neurones sont un type d'intelligence artificielle inspiré par le fonctionnement du cerveau humain. Ils sont composés de plusieurs couches de neurones artificiels, appelés "nœuds" ou "neurones", qui sont connectés entre eux par des synapses.
+
+**Fonctionnement d'un neurone**
+
+Un neurone artificiel est une unité de calcul qui prend en entrée plusieurs signaux d'entrée, les traite et les envoie à une sortie. Chaque neurone a plusieurs entrées, appelées "synapses", qui reçoivent des signaux d'autres neurones. Les signaux d'entrée sont multipliés par des poids, qui déterminent l'importance de chaque signal. Les signaux multipliés sont ensuite additionnés et soumis à une fonction d'activation, qui détermine la sortie du neurone.
+
+**Types de réseaux de neurones**
+
+Il existe plusieurs types de réseaux de neurones, notamment :
+
+1. **Réseau de neurones à couches cachées** : ce type de réseau a plusieurs couches de neurones, chacune traitant les signaux d'entrée de manière différente. Les couches cachées sont utilisées pour extraire des caractéristiques des données d'entrée.
+2. **Réseau de neurones convolutionnel** : ce type de réseau utilise des filtres convolutionnels pour traiter les données d'entrée, ce qui permet de détecter des motifs et des structures dans les données.
+3. **Réseau de neurones récurrent** : ce type de réseau utilise des boucles de rétroaction pour traiter les signaux d'entrée, ce qui permet de prendre en compte l'histoire des données.
+
+**Avantages des réseaux de neurones**
 
 
 --- Réponse au prompt STRUCTURE ---
-[Collez ici la réponse obtenue avec le prompt structuré]
+Bienvenue dans notre cours d'intelligence artificielle ! Je suis ravi de vous expliquer ce qu'est un réseau de neurones artificiel. Imaginez que vous avez un cerveau humain, composé de milliards de neurones qui communiquent entre eux pour traiter des informations. Chaque neurone reçoit des signaux d'entrée, les traite et envoie un signal de sortie à d'autres neurones. C'est un peu comme un réseau de neurones artificiel, qui est conçu pour simuler ce processus de traitement d'informations.
+
+Un réseau de neurones artificiel apprend en utilisant des données d'entrée, qui sont des exemples de ce qu'on veut qu'il apprenne. Par exemple, si on veut qu'il reconnaisse les images de chiens et de chats, on lui fournira des images de chiens et de chats avec des étiquettes "chien" ou "chat". Le réseau de neurones artificiel analyse ces images et ajuste ses paramètres pour mieux les reconnaître. C'est un processus répétitif qui se fait plusieurs fois, jusqu'à ce que le réseau de neurones artificiel soit capable de reconnaître les images avec une bonne précision.
+
+Un exemple concret d'application de réseaux de neurones artificiels est la reconnaissance vocale. Imaginez que vous voulez créer un système qui peut reconnaître les commandes vocales, comme "allume la lumière" ou "joue la musique". Un réseau de neurones artificiel peut être entraîné sur des enregistrements de voix pour apprendre à reconnaître les différents mots et les combiner pour comprendre les commandes. C'est un exemple d'apprentissage automatique qui peut être utilisé dans de nombreux domaines
 
 
 --- Analyse ---
 Quelle réponse est plus utile et pourquoi ? (2-3 phrases)
-[Votre analyse ici]
+La réponse strucurée est la plus pertinente, on retrouve une réponse simplifiée adaptée pour le contexte,
+facile à comprendre avec des exemples concrets sans langage techniques.
+C'est une bonne base pour commencer puis ensuite aller dep lus en plus dans le détail
 
 
 --- Test JSON ---
-Le JSON retourné était-il valide du premier coup ? [ ] oui  [ ] non
+Le JSON retourné était-il valide du premier coup ? [X] oui  [ ] non
 Si non, quelle modification du prompt a permis de corriger ?
-[Votre observation ici]
+Aucun problème de structure
+
+Assistant 
+Sujet à apprendre : les bases de LLM
+
+--- Explication ---
+**Les bases de LLM (Large Language Models)**
+
+**Définition** : Les LLM (Large Language Models) sont des modèles de langage artificiel complexes qui permettent à un ordinateur de comprendre et de générer du texte de manière naturelle. Ces modèles sont entraînés sur de grandes quantités de données textuelles pour apprendre les structures et les relations du langage humain.
+
+**Analogie** : Imaginez un grand dictionnaire qui contient toutes les connaissances du monde. Un LLM est comme ce dictionnaire, mais en plus intelligent. Il peut comprendre les relations entre les mots, les concepts et les idées, et les utiliser pour générer du texte original.
+
+**Exemple** : Un exemple d'application de LLM est un chatbot qui peut répondre à des questions sur un sujet spécifique, comme la médecine ou la finance. Le chatbot utilise un LLM pour comprendre la question et générer une réponse pertinente et claire. C'est comme si le chatbot avait lu tous les livres sur le sujet et pouvait répondre à votre question en quelques secondes.
+
+--- Exercice ---
+Voici un exercice sur les bases des LLM (Large Language Models) :
+
+**Exercice : Compréhension des LLM**
+
+**Objectifs :**
+
+* Comprendre les principes fondamentaux des LLM
+* Reconnaître les différentes composantes d'un LLM
+* Appliquer les connaissances acquises pour résoudre un problème
+
+**Énoncé du problème :**
+
+Imaginez que vous êtes chargé de développer un modèle de langage pour un système de recommandation de films. Le modèle doit être capable de comprendre les descriptions de films, de reconnaître les genres et les thèmes, et de suggérer des films similaires aux utilisateurs.
+
+**Questions :**
+
+
+
+
+1. Qu'est-ce qu'un LLM et comment fonctionne-t-il ?
+2. Quelles sont les différentes composantes d'un LLM (par exemple, le modèle de langage, la plateforme de traitement du langage nature
+
+
+
+
+Sujet à apprendre : La modélisation 3D
+
+--- Explication ---
+**La modélisation 3D**
+
+**Définition** : La modélisation 3D est un processus qui consiste à créer des modèles tridimensionnels numériques d'objets, de scènes ou de personnages. Ces modèles peuvent être utilisés dans divers domaines tels que la conception, la publicité, le cinéma, la réalité virtuelle et l'architecture.
+
+**Analogie** : Imaginez que vous voulez créer un modèle en pâte à modeler d'un animal. Vous devez définir la forme, la taille et les détails de l'animal pour créer un modèle réaliste. De même, la modélisation 3D consiste à créer un modèle numérique qui représente l'objet ou la scène avec précision.
+
+**Exemple** : Un exemple d'utilisation de la modélisation 3D est la création de personnages de jeux vidéo. Les concepteurs utilisent des logiciels de modélisation 3D pour créer des modèles de personnages avec des détails tels que la texture de la peau, les cheveux et les vêtements. Ces modèles peuvent ensuite être animés et utilisés dans le jeu.
+
+--- Exercice ---
+Voici un exercice sur le sujet de la modélisation 3D :
+
+**Exercice : Création d'un modèle 3D d'un objet**
+
+**Objectif :** Créer un modèle 3D d'un objet choisi (par exemple, un meuble, un animal, un bâtiment, etc.) en utilisant un logiciel de modélisation 3D (par exemple, Blender, Maya, 3ds Max, etc.).
+
+**Étapes :**
+
+1. **Choisir l'objet** : Choisissez un objet que vous souhaitez modéliser. Assurez-vous que vous avez une référence pour votre objet, telle qu'une photo ou un dessin.
+2. **Créer un nouveau projet** : Créez un nouveau projet dans votre logiciel de modélisation 3D. Choisissez les paramètres de résolution et de format de fichier appropriés.
+3
+
 
 
 --- Bilan ---
 1. Différence la plus importante entre prompt vague et prompt structuré :
-[Votre réponse ici]
+Les 5 éléments qui permettent d'orienter la réponse comme on le veut, contexte, role, le but, le format et le niveaux de détail
 
 2. Dans quel cas demanderiez-vous une sortie JSON ?
-[Votre réponse ici]
+Dans un cas où je voudrais réutiliser sa sortie JSON comme de l'extraction de données, sur des fichiers audio vidéo image.
 
 3. Comment le rôle a-t-il changé la qualité des réponses ?
-[Votre réponse ici]
+On retrouve d'avantage de mots plus ou moins technique et vulgarisé
