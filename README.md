@@ -40,9 +40,11 @@ Ce cours est concu pour fonctionner entierement avec des API gratuites. Vous ave
 | **Groq** (recommande) | Gratuit | https://console.groq.com | Rapide, genereux en quota, modeles Llama 3 et Mixtral |
 | **Ollama** (local) | Gratuit | https://ollama.com | Aucune connexion internet necessaire, tout tourne sur votre machine |
 
-**Nous recommandons Groq** : créez un compte en 2 minutes, générez une clé dans "API Keys", et tous les scripts du cours fonctionneront immédiatement.
+**Nous recommandons Groq** : créez un compte en 2 minutes, générez une clé dans "API Keys", et la majorité des scripts du cours fonctionnera immédiatement.
 
-Le module `utils.py` à la racine du dépôt détecte automatiquement quelle clé est configurée et choisit le bon fournisseur. Vous n'avez rien à modifier dans le code.
+**Exception importante** : la Room 03 utilise Hugging Face (`HF_TOKEN`) pour comparer des modèles open source.
+
+Le module `utils.py` à la racine du dépôt détecte automatiquement quelle clé est configurée et choisit le bon fournisseur (Groq/Ollama). Room 03 utilise ses propres scripts Hugging Face.
 
 ---
 
@@ -62,12 +64,20 @@ Copiez le fichier d'exemple et renseignez au moins une clé :
 cp .env.example .env
 ```
 
-Puis éditez `.env` avec votre clé Groq (gratuite) :
+Sous Windows PowerShell :
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Puis éditez `.env` avec votre clé Groq (gratuite) et votre token Hugging Face (Room 03) :
 
 ```
 GROQ_API_KEY=gsk_votre_cle_groq_ici
 HF_TOKEN=hf_votre_token_huggingface_ici
 ```
+
+Pour Hugging Face, creez un token avec la permission `Make calls to Inference Providers`.
 
 Vérifiez que tout fonctionne :
 
@@ -76,6 +86,8 @@ python utils.py
 ```
 
 Vous devez voir s'afficher le fournisseur détecté et le modèle utilisé.
+
+Pour tester Room 03, executez ensuite les scripts dans `ROOMS/03_Explorer_les_Modeles_Open_Source/code/`.
 
 ---
 
@@ -95,6 +107,8 @@ Le cours est organisé en 8 Rooms progressives. Chaque Room produit un résultat
 | 08 | Projet final | Un système intégrant prompts, API, RAG et analyse des risques |
 
 Commencez par la Room 01 et progressez dans l'ordre. Chaque Room suppose que les précédentes ont été complétées.
+
+Note : certaines parties des Rooms 07 et 08 sont volontairement des squelettes a completer (`pass`, `A COMPLETER`). C'est normal pedagogiquement.
 
 ---
 

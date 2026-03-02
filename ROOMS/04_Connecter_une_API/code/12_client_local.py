@@ -1,6 +1,6 @@
-﻿# Script 12 - Client Python qui interroge le serveur FastAPI local
+# Script 12 - Client Python qui interroge le serveur FastAPI local
 # Room 04 - Connecter une API
-# Prérequis : le serveur 11_mini_api_fastapi.py doit tourner sur le port 8000
+# Prerequis : le serveur mini_api_fastapi.py doit tourner sur le port 8000
 
 import requests
 
@@ -10,7 +10,7 @@ URL_SERVEUR = "http://127.0.0.1:8000"
 # Vérification que le serveur est opérationnel
 print("=== Vérification du serveur ===")
 try:
-    r = requests.get(f"{URL_SERVEUR}/sante")
+    r = requests.get(f"{URL_SERVEUR}/sante", timeout=10)
     if r.status_code == 200:
         print(f"Serveur OK : {r.json()['message']}")
     else:
@@ -18,7 +18,11 @@ try:
 except requests.ConnectionError:
     print("Impossible de se connecter au serveur.")
     print("Assurez-vous que le serveur est lancé avec :")
-    print("  uvicorn code.11_mini_api_fastapi:app --reload --port 8000")
+    print("  python -m uvicorn code.mini_api_fastapi:app --reload --port 8000")
+    exit(1)
+except requests.Timeout:
+    print("Le serveur met trop de temps a repondre (timeout).")
+    print("Verifiez que FastAPI est bien demarre et disponible sur le port 8000.")
     exit(1)
 
 print()
@@ -43,7 +47,8 @@ while True:
     try:
         r = requests.post(
             f"{URL_SERVEUR}/question",
-            json={"question": question}
+            json={"question": question},
+            timeout=30
         )
 
         if r.status_code == 200:
@@ -55,5 +60,7 @@ while True:
 
     except requests.ConnectionError:
         print("Connexion perdue avec le serveur.")
+    except requests.Timeout:
+        print("Le serveur ne repond pas a temps. Reessayez dans quelques secondes.")
 
     print()

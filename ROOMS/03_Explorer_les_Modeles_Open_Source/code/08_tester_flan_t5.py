@@ -1,56 +1,54 @@
-﻿# Script 08 - Interroger Flan-T5-large via l'API Hugging Face
+# Script 08 - Interroger Flan-T5-large via Inference Providers (Hugging Face)
 # Room 03 - Explorer les modèles open source
 
 import os
-import requests
 from dotenv import load_dotenv
+from huggingface_hub import InferenceClient
 
 load_dotenv()
 HF_TOKEN = os.getenv("HF_TOKEN")
 
-# URL de l'API pour Flan-T5-large
-# C'est un modèle instruction créé par Google, beaucoup plus petit que Mistral ou Llama 2
-# 780 millions de paramètres contre 7 milliards pour les deux autres
-API_URL = "https://api-inference.huggingface.co/models/google/flan-t5-large"
-
-headers = {
-    "Authorization": f"Bearer {HF_TOKEN}"
-}
+# ID du modele Flan-T5
+# C'est un modele instruction cree par Google, beaucoup plus petit que Mistral ou Llama 2
+MODEL_ID = "google/flan-t5-large"
 
 # Le même prompt que pour les autres modèles
 prompt = "Explique en 3 phrases simples ce qu'est une base de données relationnelle."
-
-payload = {
-    "inputs": prompt,
-    "parameters": {
-        "max_new_tokens": 250,
-        "temperature": 0.3
-    }
-}
 
 print("=== Interrogation de Flan-T5-large ===")
 print(f"Prompt : {prompt}")
 print("En attente de la réponse...")
 print()
 
-response = requests.post(API_URL, headers=headers, json=payload)
+if not HF_TOKEN or HF_TOKEN.startswith("hf_votre_"):
+    print("HF_TOKEN manquant ou invalide dans le fichier .env")
+    print("Ajoutez un token Hugging Face valide : HF_TOKEN=hf_...")
+    print("Permission requise : Make calls to Inference Providers.")
+    raise SystemExit(1)
 
-if response.status_code == 200:
-    resultat = response.json()
+client = InferenceClient(api_key=HF_TOKEN, timeout=60)
 
-    # Flan-T5 retourne le résultat dans un format légèrement différent
-    # Parfois c'est une liste, parfois un objet avec "generated_text"
-    if isinstance(resultat, list):
-        texte_genere = resultat[0].get("generated_text", str(resultat[0]))
-    else:
-        texte_genere = str(resultat)
-
+try:
+    texte_genere = client.text_generation(
+        prompt=prompt,
+        model=MODEL_ID,
+        max_new_tokens=250,
+        temperature=0.3
+    )
     print("=== Réponse de Flan-T5-large ===")
     print(texte_genere)
     print()
     print("Note : Flan-T5 est 10 fois plus petit que Mistral et Llama 2.")
     print("Observez la différence de longueur et de détail dans la réponse.")
-elif response.status_code == 503:
-    print("Le modèle est en cours de chargement. Réessayez dans 30 secondes.")
-else:
-    print(f"Erreur {response.status_code} : {response.text}")
+except Exception as e:
+    status_code = getattr(getattr(e, "response", None), "status_code", None)
+    if status_code == 401:
+        print("Erreur 401 : token HF invalide ou absent.")
+    elif status_code == 403:
+        print("Erreur 403 : token sans permission Inference Providers.")
+    elif status_code == 429:
+        print("Erreur 429 : quota/limite atteinte. Reessayez plus tard.")
+    elif status_code == 503:
+        print("Erreur 503 : modele en cours de chargement, reessayez dans 30 secondes.")
+    else:
+        print(f"Erreur lors de l'appel API : {e}")

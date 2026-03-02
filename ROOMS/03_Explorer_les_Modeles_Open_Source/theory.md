@@ -75,7 +75,7 @@ La capitale de la France est Paris.
 
 **Définition** : l'inférence est le processus qui consiste à utiliser un modèle entraîné pour produire une réponse à partir d'une entrée. L'inférence via API signifie que le modèle est hébergé sur un serveur distant et que vous l'interrogez via une requête HTTP, sans avoir à le télécharger.
 
-**Exemple** : au lieu de télécharger 14 Go pour Mistral-7B, vous envoyez votre prompt à `https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.1` et vous recevez la réponse en retour.
+**Exemple** : au lieu de télécharger 14 Go pour Mistral-7B, vous appelez l'API Inference Providers de Hugging Face (routeur `https://router.huggingface.co/v1`) avec votre token `HF_TOKEN` et vous recevez la réponse en retour.
 
 **Avantage** : aucune installation lourde, pas besoin de GPU.
 **Inconvénient** : le temps de réponse dépend de la charge du serveur, et l'API gratuite a des limites d'utilisation.
