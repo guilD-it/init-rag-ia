@@ -33,8 +33,39 @@ def analyser_article(texte_article, numero):
     - Utiliser client et MODELE
     - Retourner le dictionnaire Python résultant, ou None si échec
     """
-    # A COMPLETER
-    pass
+    prompt = (
+        f"Voici l'article de presse numero {numero} :\n"
+        f"---\n{texte_article}\n---\n\n"
+        "Analyse cet article et retourne uniquement un JSON valide, sans texte avant ni apres.\n"
+        "Le JSON doit contenir exactement les cles suivantes : "
+        "\"article_numero\", \"sentiment\", \"mots_cles\", \"resume\".\n"
+        "Format attendu :\n"
+        "{\n"
+        f'  "article_numero": {numero},\n'
+        '  "sentiment": "positif",\n'
+        '  "mots_cles": ["mot1", "mot2", "mot3"],\n'
+        '  "resume": "Resume en deux phrases maximum."\n'
+        "}\n"
+    )
+    for _ in range(MAX_TENTATIVES):
+        reponse = client.chat.completions.create(
+            model=MODELE,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0,
+            max_tokens=200
+        )
+        contenu = reponse.choices[0].message.content
+
+        try:
+            resultat = json.loads(contenu)
+        except json.JSONDecodeError:
+            continue
+
+        cles_attendues = {"article_numero", "sentiment", "mots_cles", "resume"}
+        if isinstance(resultat, dict) and cles_attendues.issubset(resultat.keys()):
+            return resultat
+
+    return None
 
 
 # --- Programme principal ---

@@ -51,8 +51,12 @@ def rechercher_passages(question, collection, modele_emb, n=3):
     - Interroger la collection ChromaDB
     - Retourner les documents trouvés
     """
-    # A COMPLETER
-    pass
+    vecteur_question = modele_emb.encode([question])[0]
+    resultats = collection.query(
+        query_embeddings=[vecteur_question.tolist()],
+        n_results=n
+    )
+    return resultats["documents"][0]
 
 
 def generer_reponse(question, passages):
@@ -63,8 +67,34 @@ def generer_reponse(question, passages):
     - Si l'information n'est pas dans les passages, le dire explicitement
     - Utiliser client_llm et MODELE
     """
-    # A COMPLETER
-    pass
+    contexte = "\n---\n".join(passages)
+
+    prompt = (
+        "Voici des passages extraits d'un document interne d'entreprise :\n"
+        f"---\n{contexte}\n---\n\n"
+        "Réponds uniquement à partir de ces passages.\n"
+        "Si l'information ne figure pas dans les passages, réponds exactement : "
+        "\"Cette information ne figure pas dans le document fourni.\"\n"
+        "Dans tous les autres cas, cite au moins un passage source entre guillemets dans ta réponse.\n\n"
+        f"Question : {question}"
+    )
+
+    reponse = client_llm.chat.completions.create(
+        model=MODELE,
+        messages=[
+            {
+                "role": "system",
+                "content": (
+                    "Tu es un assistant d'entreprise. "
+                    "Tu réponds uniquement à partir des passages fournis et tu cites la source utilisée."
+                )
+            },
+            {"role": "user", "content": prompt}
+        ],
+        temperature=0,
+        max_tokens=500
+    )
+    return reponse.choices[0].message.content
 
 
 # --- Programme principal ---

@@ -31,8 +31,12 @@ def ajouter_au_contexte(role, contenu):
     - Si le nombre de messages (hors message system) dépasse MAX_ECHANGES * 2,
       supprimer les 2 messages les plus anciens (après le message system)
     """
-    # A COMPLETER
-    pass
+    historique.append({"role": role, "content": contenu})
+
+    # On conserve toujours le message system en position 0.
+    # Si on dépasse la limite de paires user/assistant, on retire la plus ancienne paire.
+    while len(historique) - 1 > MAX_ECHANGES * 2:
+        del historique[1:3]
 
 
 def envoyer_message(texte_utilisateur):
@@ -47,8 +51,16 @@ def envoyer_message(texte_utilisateur):
     4. Ajouter la réponse de l'assistant à l'historique
     5. Retourner le texte de la réponse
     """
-    # A COMPLETER
-    pass
+    ajouter_au_contexte("user", texte_utilisateur)
+
+    completion = client.chat.completions.create(
+        model=MODELE,
+        messages=historique
+    )
+    reponse = completion.choices[0].message.content
+
+    ajouter_au_contexte("assistant", reponse)
+    return reponse
 
 
 # --- Programme principal ---
