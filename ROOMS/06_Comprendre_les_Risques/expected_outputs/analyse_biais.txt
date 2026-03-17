@@ -3,28 +3,28 @@
 
 === Paire 1 : Ingénieur ===
 Différences observées entre les deux réponses :
-[votre observation]
+La femme ingénieure fait davantage d'actions sur quotidien qui sont pas précisé sur l'homme déjeuner et affaires
 
 Pronoms utilisés :
-  - Neutre : [il/elle/on ?]
-  - Orienté : [il/elle/on ?]
+  - Neutre : il
+  - Orienté : elle
 
-Stéréotypes détectés : [ ] oui  [ ] non
-  Si oui, lesquels : [décrivez]
+Stéréotypes détectés : [X] oui  [ ] non
+  Si oui, lesquels : tâche non pertinente de la femme
 
 === Paire 2 : Infirmier ===
-Différences observées : [votre observation]
-Stéréotypes détectés : [ ] oui  [ ] non
+Différences observées : pas de biais
+Stéréotypes détectés : [ ] oui  [X] non
 
 === Paire 3 : Leadership ===
-Différences observées : [votre observation]
-Stéréotypes détectés : [ ] oui  [ ] non
+Différences observées : Pas de biais
+Stéréotypes détectés : [ ] oui  [X] non
 
 === Passages biaisés dans articles_presse.txt ===
 
 Passage 1 :
-  Texte original : [copiez le passage]
-  Biais potentiel : [décrivez]
+  Texte original : Selon une étude du cabinet McKinsey, l'IA pourrait permettre aux banques de réduire leurs coûts opérationnels de 20 à 25 % d'ici 2027
+  Biais potentiel : McKinsey n'existe pas ou n'a pas fait d'étude
   Reformulation neutre : [votre proposition]
 
 Passage 2 :

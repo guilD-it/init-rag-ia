@@ -1,0 +1,10 @@
+Quel type de risque correspond à chaque incident ?
+1 - Fausse information
+2 - leak d'information 
+3 - biais de représentation
+Quelle mesure aurait pu prévenir chaque incident ?
+1 - RAG
+2 - sécurité prompt injection
+3 - RAG - limiter contexte
+Comment l'entreprise devrait-elle modifier son système pour éviter ces problèmes ?
+1 - 

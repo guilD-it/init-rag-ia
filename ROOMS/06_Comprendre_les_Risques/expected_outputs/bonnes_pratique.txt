@@ -1,0 +1,9 @@
+Bonnes pratiques :
+    - Cites les sources utilisées
+    Simple vérification
+
+    -Donner un rôle
+    Limiter le contexte
+
+    -Etre le plus précis possible dans la formulation
+    Ne pas laisser de doute ou d'amibuigte pour s'attendre au bon format de réponse

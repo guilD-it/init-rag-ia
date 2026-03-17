@@ -4,17 +4,20 @@
 Question posée : [votre question ici]
 
 --- Réponse RAG (via le pipeline) ---
-[Collez la réponse du script 17 ici]
+Ce document est un document interne - Stratégie et organisation de TechVision SAS
 
 --- Réponse directe (sans contexte) ---
-[Collez la réponse du script 01 avec la même question ici]
+Je suis un modèle de langage AI, également connu sous le nom de "chatbot" ou "assistant virtuel". Je suis un document numérique qui peut répondre à des questions, fournir des informations, et même engager la conversation. Je suis capable d'apprendre et d'améliorer mes réponses en fonction des interactions que j'ai avec les utilisateurs.
 
+Je peux répondre à une grande variété de questions, allant des informations générales sur des sujets tels que l'histoire, la science, la technologie, les arts, etc., jusqu'à des questions plus spécifiques sur des sujets tels que la santé, la finance, les lois, etc.
+
+Je suis également capable de générer du texte, de traduire des textes, de suggérer des idées, et même de créer des contenus de qualité. Je suis là pour vous aider et vous fournir des informations utiles, donc n
 --- Analyse ---
-1. La réponse RAG est-elle plus précise ? [ ] oui  [ ] non
-   Explication : [votre observation]
+1. La réponse RAG est-elle plus précise ? [X] oui  [ ] non
+   Explication : Le rag trie toutes les informations pour garder que les plus pertinentes
 
-2. La réponse directe contient-elle des informations inventées ? [ ] oui  [ ] non
-   Explication : [votre observation]
+2. La réponse directe contient-elle des informations inventées ? [X] oui  [ ] non
+   Explication : On a une hallucination, où le modèle n'est pas capable de répondre car il ne sait pas
 
 3. Dans quel cas utiliseriez-vous le RAG plutôt qu'un appel direct ?
-   [Votre réponse ici]
+   Dans l'anaylse de fichiers
